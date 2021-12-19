@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block body %}
+{% from "includes/formhelpers.html" import render_field %}
+<div class="jumbotron text-left" >
+<h3>Tahmin Yap</h3>
+<hr>
+<form method="post">
+    {{ render_field(form.recipient_age,class = "form-control") }}
+    {{ render_field(form.recipient_gender, class = "form-control") }}
+    {{ render_field(form.recipient_body_mass, class = "form-control") }}
+    {{ render_field(form.recipient_ABO, class = "form-control") }}
+    {{ render_field(form.recipient_rh, class = "form-control") }}
+    {{ render_field(form.disease, class = "form-control") }}
+    {{ render_field(form.disease_group, class = "form-control") }}
+    {{ render_field(form.donor_age, class = "form-control") }}
+    {{ render_field(form.donor_ABO, class = "form-control") }}
+    <button type="submit" class="btn btn-primary">Tahmin Yap</button>
+    <br>
+</form>
+</div>
+{% endblock body %}
+

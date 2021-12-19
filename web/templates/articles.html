@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="jumbotron text-left" >
+<h3>Raporlar</h3>
+</div>
+{% if articles %}
+<form action="/search" method = "post">
+    <input type="text" name = "keyword" class="input-sm" maxlength="64" placeholder="Ara">
+<button type="submit" class="btn btn-danger">Ara</button>
+</form>
+<hr>
+<ul class="list-group">
+    {% for article in articles %} 
+    <li class="list-group-item"><a href="article/{{article.id}}">{{article.title}}</li>
+    {% endfor %}
+</ul>
+
+{% else %}
+<div class="alert alert-danger">Bu sistemde henüz kayıt yok.</div>
+{% endif %}
+{% endblock body %}
